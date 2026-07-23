@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sky blue theme palette -->
+    <color name="sky_blue_50">#E6F7FF</color>
+    <color name="sky_blue_100">#CDEEFF</color>
+    <color name="sky_blue_200">#9BDBFF</color>
+    <color name="sky_blue_300">#66C6FF</color>
+    <color name="sky_blue_400">#3DB4F2</color>
+    <color name="sky_blue_500">#1FA1E8</color>
+    <color name="sky_blue_600">#0E8CD6</color>
+    <color name="sky_blue_700">#0A6FAE</color>
+    <color name="sky_blue_800">#08557F</color>
+    <color name="sky_blue_900">#053A57</color>
+
+    <color name="favorable_green">#2ECC71</color>
+    <color name="unfavorable_red">#E74C3C</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="off_white">#F4FBFF</color>
+    <color name="text_dark">#0B2C3D</color>
+    <color name="text_muted">#5C7C8A</color>
+
+    <color name="polygon_fill">#331FA1E8</color>
+    <color name="polygon_stroke">#0E8CD6</color>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WTTX Coverage Survey</string>
+    <string name="hint_input">Enter GPS (lat, lon) or paste a map link</string>
+    <string name="btn_locate">My Location</string>
+    <string name="btn_check">Check Coverage</string>
+    <string name="signature">MVT</string>
+</resources>
