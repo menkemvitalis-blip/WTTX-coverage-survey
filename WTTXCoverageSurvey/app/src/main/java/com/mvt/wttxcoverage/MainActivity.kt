@@ -66,6 +66,14 @@ class MainActivity : AppCompatActivity() {
                 false
             }
         }
+
+        handleIncomingLink(intent)
+    }
+
+    override fun onNewIntent(intent: android.content.Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIncomingLink(intent)
     }
 
     private fun setupMap() {
@@ -114,7 +122,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Enter coordinates or a map link first", Toast.LENGTH_SHORT).show()
             return
         }
+        processInput(raw)
+    }
 
+    /** Shared by the "Check Coverage" button and by links the app was opened with. */
+    private fun processInput(raw: String) {
         if (GeoUtils.looksLikeShortLink(raw)) {
             CoroutineScope(Dispatchers.Main).launch {
                 val resolved = GeoUtils.resolveShortLink(raw)
@@ -133,6 +145,14 @@ class MainActivity : AppCompatActivity() {
                 runCheck(coords.first, coords.second)
             }
         }
+    }
+
+    /** Handles the app being opened via a geo: URI or a Google Maps link ("Open with…"). */
+    private fun handleIncomingLink(intent: android.content.Intent?) {
+        val uri = intent?.data ?: return
+        val raw = uri.toString()
+        inputField.setText(raw)
+        processInput(raw)
     }
 
     private fun runCheck(lat: Double, lon: Double) {
